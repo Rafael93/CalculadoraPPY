@@ -1,7 +1,3 @@
-//lo mas importante son los requerimientos
-//el Diseño es una recomendacion
-//siempre dar el extra
-
 const weightInput = document.getElementById("weight-input");
 const calculate = document.getElementById("calculate-button");
 const container = document.getElementById("calculator");
@@ -101,7 +97,6 @@ function hollidaySegarMethod(weight) {
   }; //
   const multiple = 10; //la variable multiple es 10 por que cada 10 kg hay variacion en la cantidad de la dosis a ser suministrada
   const dosis = weight / multiple;
-  const maxDosis = 6; //Define la dosis maxima en kg, que puede ser administrado a un paciente de pediatria
   let volumen = 0; //es el resultado final en cc
   if (dosis < 1) {
     volumen = (dosis % 1) * multiple * cantCC.firstKg;
