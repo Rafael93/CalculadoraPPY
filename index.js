@@ -21,25 +21,37 @@ calculate.addEventListener("click", function (event) {
     //creamos dos elementos en el dom para insertar el volumen diario
     const dailyVolumenResult1 = document.createElement("div");
     const dailyVolumenResult2 = document.createElement("div");
+    //Agregando esta clase al div vamos a poder formatear su estilo
+    dailyVolumenResult1.classList.add("results");
+    dailyVolumenResult2.classList.add("results");
+    //insertar el texto en el html
     dailyVolumenResult1.innerHTML =
       "El volumen diario con constante 1500 debe ser " +
       dailyVolume[0].toFixed(2) +
       " cc";
+
     container.appendChild(dailyVolumenResult1);
+
     dailyVolumenResult2.innerHTML =
       "El volumen diario con constante 2000 debe ser " +
       dailyVolume[1].toFixed(2) +
       " cc";
+
     container.appendChild(dailyVolumenResult2);
 
     //creamos elementos para mostrar el mantenimiento
     const maintenanceResult1 = document.createElement("div");
+    maintenanceResult1.classList.add("results");
+
     maintenanceResult1.innerHTML =
       "El mantenimiento con constante 1500, en cc es " +
       maintenanceVolume1.toFixed(2) +
       " cc";
     container.appendChild(maintenanceResult1);
+
     const maintenanceResult2 = document.createElement("div");
+    maintenanceResult2.classList.add("results");
+
     maintenanceResult2.innerHTML =
       "El mantenimiento con constante 2000, en cc es " +
       maintenanceVolume2.toFixed(2) +
@@ -48,12 +60,17 @@ calculate.addEventListener("click", function (event) {
 
     //creamos elementos para mostrar el resultado del mantenimiento mas medio mantenimiento
     const mplushmResult1 = document.createElement("div");
+    mplushmResult1.classList.add("results");
+
     mplushmResult1.innerHTML =
       "El mantenimiento mas medio mantenimiento con constante 1500, en cc es " +
       maintenancePlusHalf1.toFixed(2) +
       " cc";
     container.appendChild(mplushmResult1);
+
     const mplushmResult2 = document.createElement("div");
+    mplushmResult2.classList.add("results");
+
     mplushmResult2.innerHTML =
       "El mantenimiento mas medio mantenimiento con constante 2000, en cc es " +
       maintenancePlusHalf2.toFixed(2) +
@@ -66,17 +83,20 @@ calculate.addEventListener("click", function (event) {
 
     //creamos un elemento en el dom para insertar el volumen diario
     const result = document.createElement("div");
+    result.classList.add("results");
     result.innerHTML = "El volumen diario debe ser " + dailyVolume + " cc";
     container.appendChild(result);
 
     //creamos un elemento en el dom para insertar el mantenimiento
     const maintenanceResult = document.createElement("div");
+    maintenanceResult.classList.add("results");
     maintenanceResult.innerHTML =
       "El mantenimiento debe ser " + maintenanceVolume.toFixed(2) + " cc";
     container.appendChild(maintenanceResult);
 
     //creamos un elemento en el dom para instar el m+m/2
     const maintenancePlusHalfResult = document.createElement("div");
+    maintenancePlusHalfResult.classList.add("results");
     maintenancePlusHalfResult.innerHTML =
       "El mantenimiento debe ser " + maintenancePlusHalf + " cc";
     container.appendChild(maintenancePlusHalfResult);

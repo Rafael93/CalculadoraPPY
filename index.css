@@ -69,6 +69,24 @@ input[type="number"] {
   color: white;
   background-color: rgb(252, 66, 109);
   border: none;
-  width: 10vw;
-  height: 5vh;
+  width: 5rem;
+  height: 3rem;
+}
+
+.results {
+  color: rgb(37, 129, 207);
+  font-weight: bold;
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0 3rem;
+  }
+  #calculator h1 {
+    font-size: 24px;
+  }
+  .results {
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
 }
