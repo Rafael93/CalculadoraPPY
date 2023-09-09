@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
 }
 
 body {
@@ -21,9 +20,8 @@ input[type="number"] {
 }
 
 .container {
-  display: flex;
   position: absolute;
-  width: 50vw;
+  width: 90vw;
   height: 50vh;
   left: 0;
   right: 0;
@@ -39,8 +37,9 @@ input[type="number"] {
 }
 
 #calculator {
-  position: absolute;
-  top: 71px;
+  height: 100%;
+  width: 50%;
+  float: left;
 }
 
 #calculator h1 {
@@ -71,4 +70,12 @@ input[type="number"] {
   border: none;
   width: 10vw;
   height: 5vh;
+}
+
+#howToDoIt {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: rgb(252, 66, 109);
+  text-align: center;
 }
