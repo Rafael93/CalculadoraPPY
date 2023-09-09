@@ -43,14 +43,16 @@ calculate.addEventListener("click", function (event) {
 //el valor del peso del paciente y luego cargando las dosis necesarias
 // segun el peso sustraido en la variable hasta que el peso en la funcion llegue a 0
 function hollidaySegarMethod(weight) {
+  //variable que contiene las dosis por cada 10kg
   const cantCC = {
     firstKg: "100",
     secondKg: "50",
     lastKg: "20",
-  }; //
+  };
   const multiple = 10; //la variable multiple es 10 por que cada 10 kg hay variacion en la cantidad de la dosis a ser suministrada
-  const dosis = weight / multiple;
+  const dosis = weight / multiple; //Al dividir el peso por 10 podemos saber cuantas decenas hay en la edad ingresada
   let volumen = 0; //es el resultado final en cc
+  //Segun el resultado de la division empezamos a realizar los calculos
   if (dosis < 1) {
     volumen = (dosis % 1) * multiple * cantCC.firstKg;
   } else if (dosis >= 1 && dosis <= 2) {
@@ -96,26 +98,35 @@ function printResultsBSM(
   let container = document.querySelector(".container");
   container.style.height = "90vh";
   //creamos dos elementos en el dom para insertar el volumen diario
-  const dailyVolumenResult1 = document.createElement("div");
-  const dailyVolumenResult2 = document.createElement("div");
-  //Agregando esta clase al div vamos a poder formatear su estilo
-  dailyVolumenResult1.classList.add("results");
-  dailyVolumenResult2.classList.add("results");
-  //insertar el texto en el html
-  dailyVolumenResult1.innerHTML =
-    "El volumen diario con constante 1500 debe ser " +
-    dailyVolume[0].toFixed(2) +
-    "cc";
+  const dailyVolumeContainer1 = document.createElement("div");
+  const dailyVolumenResult1 = document.createElement("span");
 
+  const dailyVolumeContainer2 = document.createElement("div");
+  const dailyVolumenResult2 = document.createElement("span");
+
+  //Agregando esta clase al div vamos a poder formatear su estilo
+  dailyVolumeContainer1.classList.add("results");
+  dailyVolumenResult1.classList.add("results");
+
+  dailyVolumeContainer2.classList.add("results");
+  dailyVolumenResult2.classList.add("results");
+
+  //insertar el texto en el html
+  dailyVolumeContainer1.innerHTML =
+    "El volumen diario con constante 1500 debe ser";
+  dailyVolumenResult1.innerHTML = dailyVolume[0].toFixed(2) + "cc";
+
+  resultContainer.appendChild(dailyVolumeContainer1);
   resultContainer.appendChild(dailyVolumenResult1);
 
-  dailyVolumenResult2.innerHTML =
-    "El volumen diario con constante 2000 debe ser " +
-    dailyVolume[1].toFixed(2) +
-    "cc";
+  dailyVolumeContainer2.innerHTML =
+    "El volumen diario con constante 2000 debe ser ";
+  dailyVolumenResult2.innerHTML = dailyVolume[1].toFixed(2) + "cc";
 
+  resultContainer.appendChild(dailyVolumeContainer2);
   resultContainer.appendChild(dailyVolumenResult2);
 
+  /* 
   //creamos elementos para mostrar el mantenimiento
   const maintenanceResult1 = document.createElement("div");
   maintenanceResult1.classList.add("results");
@@ -152,7 +163,7 @@ function printResultsBSM(
     "El mantenimiento mas medio mantenimiento con constante 2000, en cc es " +
     maintenancePlusHalf2.toFixed(2) +
     "cc";
-  resultContainer.appendChild(mplushmResult2);
+  resultContainer.appendChild(mplushmResult2); */
 }
 
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
