@@ -1,6 +1,9 @@
 const weightInput = document.getElementById("weight-input");
 const calculate = document.getElementById("calculate-button");
+const container = document.querySelector(".container");
 const resultContainer = document.getElementById("resultContainer");
+const calculator = document.getElementById("calculator");
+const content = document.querySelector(".content");
 
 //El algoritmo debe funcionar de tal manera que al darle click
 //en el boton de calcular los resultados son mostrardos en la pantalla
@@ -95,8 +98,9 @@ function printResultsBSM(
   maintenancePlusHalf1,
   maintenancePlusHalf1
 ) {
-  let container = document.querySelector(".container");
-  container.style.height = "90vh";
+  container.style.height = "100%";
+  container.style.display = "block";
+
   //creamos dos elementos en el dom para insertar el volumen diario
   const dailyVolumeContainer1 = document.createElement("div");
   const dailyVolumenResult1 = document.createElement("span");
@@ -125,50 +129,11 @@ function printResultsBSM(
 
   resultContainer.appendChild(dailyVolumeContainer2);
   resultContainer.appendChild(dailyVolumenResult2);
-
-  /* 
-  //creamos elementos para mostrar el mantenimiento
-  const maintenanceResult1 = document.createElement("div");
-  maintenanceResult1.classList.add("results");
-
-  maintenanceResult1.innerHTML =
-    "El mantenimiento con constante 1500, en cc es " +
-    maintenanceVolume1.toFixed(2) +
-    "cc";
-  resultContainer.appendChild(maintenanceResult1);
-
-  const maintenanceResult2 = document.createElement("div");
-  maintenanceResult2.classList.add("results");
-
-  maintenanceResult2.innerHTML =
-    "El mantenimiento con constante 2000, en cc es " +
-    maintenanceVolume2.toFixed(2) +
-    "cc";
-  resultContainer.appendChild(maintenanceResult2);
-
-  //creamos elementos para mostrar el resultado del mantenimiento mas medio mantenimiento
-  const mplushmResult1 = document.createElement("div");
-  mplushmResult1.classList.add("results");
-
-  mplushmResult1.innerHTML =
-    "El mantenimiento mas medio mantenimiento con constante 1500, en cc es " +
-    maintenancePlusHalf1.toFixed(2) +
-    "cc";
-  resultContainer.appendChild(mplushmResult1);
-
-  const mplushmResult2 = document.createElement("div");
-  mplushmResult2.classList.add("results");
-
-  mplushmResult2.innerHTML =
-    "El mantenimiento mas medio mantenimiento con constante 2000, en cc es " +
-    maintenancePlusHalf2.toFixed(2) +
-    "cc";
-  resultContainer.appendChild(mplushmResult2); */
 }
 
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
-  const container = document.querySelector(".container");
-  container.style.height = "80vh";
+  container.style.height = "100%";
+  container.style.display = "block";
 
   const dailyVolumenContainer = document.createElement("div");
   dailyVolumenContainer.classList.add("results");

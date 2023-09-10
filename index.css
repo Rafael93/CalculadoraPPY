@@ -135,8 +135,18 @@ button:active {
     width: 100%;
   }
 
+  .content {
+    padding: 0 5rem;
+  }
+
   .results {
     font-size: 12px;
     margin-bottom: 1rem;
   }
+}
+
+@media (max-width: 900px) {
+  /* .content {
+    padding: 0;
+  } */
 }
