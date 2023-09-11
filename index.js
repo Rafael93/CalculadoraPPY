@@ -4,7 +4,6 @@ const container = document.querySelector(".container");
 const resultContainer = document.getElementById("resultContainer");
 const calculator = document.getElementById("calculator");
 const content = document.querySelector(".content");
-const information = document.querySelector("#information");
 
 //El algoritmo debe funcionar de tal manera que al darle click
 //en el boton de calcular los resultados son mostrardos en la pantalla
@@ -99,16 +98,9 @@ function printResultsBSM(
   maintenancePlusHalf1,
   maintenancePlusHalf1
 ) {
-  container.style.height = "100%";
   container.style.display = "block";
-  content.style.padding = "2rem";
-  resultContainer.style.padding = "2rem";
-  information.style.position = "absolute";
-  information.style.width = "100%";
-  information.style.height = "0";
-  information.childNodes[1].style.display = "none";
-  const informationButton = document.createElement("button");
-  informationButton.classList.add("info-button");
+  container.style.height = "80%";
+  createInfoButton();
 
   //creamos dos elementos en el dom para insertar el volumen diario
   const dailyVolumeContainer1 = document.createElement("div");
@@ -138,12 +130,12 @@ function printResultsBSM(
 
   resultContainer.appendChild(dailyVolumeContainer2);
   resultContainer.appendChild(dailyVolumenResult2);
+}
 
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
-  container.style.height = "100%";
   container.style.display = "block";
-  content.style.padding = "2rem";
-  resultContainer.style.padding = "2rem";
+  container.style.height = "80%";
+  createInfoButton();
 
   const dailyVolumenContainer = document.createElement("div");
   dailyVolumenContainer.classList.add("results");
@@ -177,7 +169,7 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   const maintenancePlusHalfResult = document.createElement("div");
   maintenancePlusHalfResult.classList.add("results-Number");
 
-  maintenancePlusHalfContainer.innerHTML = "El m+m/2 debe ser ";
+  maintenancePlusHalfContainer.innerHTML = "El mantenimiento debe ser ";
   maintenancePlusHalfResult.innerHTML = maintenancePlusHalf.toFixed(2) + "cc";
 
   resultContainer.appendChild(maintenancePlusHalfContainer);
@@ -185,12 +177,32 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
 }
 
 function hideResult() {
-  const results = document.querySelectorAll(".results");
-  const resultsNumber = document.querySelectorAll(".results-Number");
+  let results = document.querySelectorAll(".results");
+  let resultsNumbers = document.querySelectorAll(".results-Number");
   if (results.length > 0) {
     for (let i = 0; i < results.length; i++) {
       results[i].remove();
-      resultsNumber[i].remove();
+      resultsNumbers[i].remove();
     }
+  }
+}
+
+function createInfoButton() {
+  if (!document.querySelector(".info-button")) {
+    const informationButton = document.createElement("button");
+    informationButton.innerHTML = "^";
+    informationButton.classList.add("info-button");
+    container.appendChild(informationButton);
+    informationButton.addEventListener("click", () => {
+      if (informationButton.innerHTML === "^") {
+        informationButton.classList.add("active");
+        container.style.display = "flex";
+        informationButton.innerHTML = "v";
+      } else {
+        informationButton.classList.remove("active");
+        container.style.display = "block";
+        informationButton.innerHTML = "^";
+      }
+    });
   }
 }

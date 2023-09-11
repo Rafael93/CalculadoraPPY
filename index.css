@@ -93,6 +93,14 @@ button:active {
   margin: 1rem 0;
 }
 
+.results-Number {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: rgb(252, 66, 109);
+  font-weight: bold;
+}
+
 .hideResults {
   visibility: hidden;
 }
@@ -108,6 +116,36 @@ button:active {
 
 #information h1 {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 1100px) {
+  * {
+    font-size: medium;
+  }
+
+  h1 {
+    font-size: revert;
+  }
+
+  #calculator form button {
+    padding: 11px 19px;
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 1060px) {
+  h1 {
+    font-size: 24px;
+  }
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    width: 70%;
+  }
 }
 
 @media (max-width: 450px) {
@@ -127,34 +165,59 @@ button:active {
     font-size: 24px;
   }
 
+  #calculator form input {
+    font-size: smaller;
+    padding: 10px 0;
+  }
+
   #information {
     width: 100%;
   }
 
   .content {
-    padding: 4rem;
+    padding: 0 5rem;
   }
 
   .results {
-    font-size: 20px;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    font-size: 12px;
+    margin: 5px;
   }
 
   .results-Number {
-    font-size: 35px;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-    color: rgb(252, 66, 109);
-    font-weight: bold;
+    margin: 0;
   }
 
   .info-button {
+    display: block;
+    position: absolute;
+    background-color: #ff416c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid ghostwhite;
+    right: 46%;
+    bottom: 1%;
+    font-size: 16px;
+    font-weight: bold;
   }
-}
 
-@media (max-width: 900px) {
-  /* .content {
-    padding: 0;
-  } */
+  .info-button-active {
+    display: block;
+    position: absolute;
+    background-color: white;
+    color: #ff416c;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid ghostwhite;
+    right: 46%;
+    bottom: 1%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .info-button:hover {
+    transform: scale(0.7);
+  }
 }
