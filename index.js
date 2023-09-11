@@ -140,7 +140,6 @@ function printResultsBSM(
 
   resultContainer.appendChild(dailyVolumeContainer2);
   resultContainer.appendChild(dailyVolumenResult2);
-}
 
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   container.style.height = "100%";
