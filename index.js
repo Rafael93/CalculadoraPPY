@@ -4,6 +4,7 @@ const container = document.querySelector(".container");
 const resultContainer = document.getElementById("resultContainer");
 const calculator = document.getElementById("calculator");
 const content = document.querySelector(".content");
+const information = document.querySelector("#information");
 
 //El algoritmo debe funcionar de tal manera que al darle click
 //en el boton de calcular los resultados son mostrardos en la pantalla
@@ -100,20 +101,30 @@ function printResultsBSM(
 ) {
   container.style.height = "100%";
   container.style.display = "block";
+  content.style.padding = "2rem";
+  resultContainer.style.padding = "2rem";
+  information.style.position = "absolute";
+  information.style.width = "100%";
+  information.style.height = "0";
+  information.childNodes[1].style.display = "none";
+  const informationButton = document.createElement("button");
+  informationButton.classList.add("info-button");
+  };
 
+  container.appendChild(informationButton());
   //creamos dos elementos en el dom para insertar el volumen diario
   const dailyVolumeContainer1 = document.createElement("div");
-  const dailyVolumenResult1 = document.createElement("span");
+  const dailyVolumenResult1 = document.createElement("div");
 
   const dailyVolumeContainer2 = document.createElement("div");
-  const dailyVolumenResult2 = document.createElement("span");
+  const dailyVolumenResult2 = document.createElement("div");
 
   //Agregando esta clase al div vamos a poder formatear su estilo
   dailyVolumeContainer1.classList.add("results");
-  dailyVolumenResult1.classList.add("results");
+  dailyVolumenResult1.classList.add("results-Number");
 
   dailyVolumeContainer2.classList.add("results");
-  dailyVolumenResult2.classList.add("results");
+  dailyVolumenResult2.classList.add("results-Number");
 
   //insertar el texto en el html
   dailyVolumeContainer1.innerHTML =
@@ -134,12 +145,14 @@ function printResultsBSM(
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   container.style.height = "100%";
   container.style.display = "block";
+  content.style.padding = "2rem";
+  resultContainer.style.padding = "2rem";
 
   const dailyVolumenContainer = document.createElement("div");
   dailyVolumenContainer.classList.add("results");
 
-  const dailyVolumeResult = document.createElement("span");
-  dailyVolumeResult.classList.add("results");
+  const dailyVolumeResult = document.createElement("div");
+  dailyVolumeResult.classList.add("results-Number");
 
   dailyVolumenContainer.innerHTML = "El volumen diario debe ser ";
   dailyVolumeResult.innerHTML = dailyVolume + "cc";
@@ -151,8 +164,8 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   const maintenanceContainer = document.createElement("div");
   maintenanceContainer.classList.add("results");
 
-  const maintenanceResult = document.createElement("span");
-  maintenanceResult.classList.add("results");
+  const maintenanceResult = document.createElement("div");
+  maintenanceResult.classList.add("results-Number");
 
   maintenanceContainer.innerHTML = "El mantenimiento debe ser ";
   maintenanceResult.innerHTML = maintenanceVolume.toFixed(2) + "cc";
@@ -164,8 +177,8 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   const maintenancePlusHalfContainer = document.createElement("div");
   maintenancePlusHalfContainer.classList.add("results");
 
-  const maintenancePlusHalfResult = document.createElement("span");
-  maintenancePlusHalfResult.classList.add("results");
+  const maintenancePlusHalfResult = document.createElement("div");
+  maintenancePlusHalfResult.classList.add("results-Number");
 
   maintenancePlusHalfContainer.innerHTML = "El mantenimiento debe ser ";
   maintenancePlusHalfResult.innerHTML = maintenancePlusHalf.toFixed(2) + "cc";
@@ -175,10 +188,12 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
 }
 
 function hideResult() {
-  let results = document.querySelectorAll(".results");
+  const results = document.querySelectorAll(".results");
+  const resultsNumber = document.querySelectorAll(".results-Number");
   if (results.length > 0) {
     for (let i = 0; i < results.length; i++) {
       results[i].remove();
+      resultsNumber[i].remove();
     }
   }
 }

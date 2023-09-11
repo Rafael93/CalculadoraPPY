@@ -92,10 +92,6 @@ button:active {
   font-size: 10px;
   margin: 1rem 0;
 }
-/* 
-.larger {
-  font-size: 15px;
-} */
 
 .hideResults {
   visibility: hidden;
@@ -136,12 +132,21 @@ button:active {
   }
 
   .content {
-    padding: 0 5rem;
+    padding: 4rem;
   }
 
   .results {
-    font-size: 12px;
+    font-size: 20px;
     margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .results-Number {
+    font-size: 35px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: rgb(252, 66, 109);
+    font-weight: bold;
   }
 }
 
