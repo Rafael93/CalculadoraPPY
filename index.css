@@ -157,25 +157,52 @@ button:active {
     justify-content: center;
   }
 
+  .content {
+    height: 100%;
+  }
+
   #calculator {
+    height: 100%;
     width: 100%;
   }
 
-  #calculator h1 {
-    font-size: 24px;
+  h1 {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  #calculator span {
+    font-size: 12px;
+  }
+
+  #calculator form {
+    margin: 8px;
   }
 
   #calculator form input {
     font-size: smaller;
     padding: 10px 0;
+    margin-bottom: 10px;
+  }
+
+  #calculator form button {
+    font-size: 12px;
   }
 
   #information {
     width: 100%;
   }
 
+  #information li {
+    font-size: 12px;
+  }
+
   .content {
     padding: 0 5rem;
+  }
+
+  #resultContainer {
+    margin: 26px;
   }
 
   .results {

@@ -99,7 +99,7 @@ function printResultsBSM(
   maintenancePlusHalf1
 ) {
   container.style.display = "block";
-  container.style.height = "80%";
+  container.style.height = "100%";
   createInfoButton();
 
   //creamos dos elementos en el dom para insertar el volumen diario
@@ -134,7 +134,8 @@ function printResultsBSM(
 
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   container.style.display = "block";
-  container.style.height = "80%";
+  container.style.height = "100%";
+  content.style.height = "100%";
   createInfoButton();
 
   const dailyVolumenContainer = document.createElement("div");
