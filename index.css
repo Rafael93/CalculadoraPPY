@@ -148,6 +148,9 @@ button:active {
     color: rgb(252, 66, 109);
     font-weight: bold;
   }
+
+  .info-button {
+  }
 }
 
 @media (max-width: 900px) {

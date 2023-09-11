@@ -109,9 +109,7 @@ function printResultsBSM(
   information.childNodes[1].style.display = "none";
   const informationButton = document.createElement("button");
   informationButton.classList.add("info-button");
-  };
 
-  container.appendChild(informationButton());
   //creamos dos elementos en el dom para insertar el volumen diario
   const dailyVolumeContainer1 = document.createElement("div");
   const dailyVolumenResult1 = document.createElement("div");
@@ -180,7 +178,7 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   const maintenancePlusHalfResult = document.createElement("div");
   maintenancePlusHalfResult.classList.add("results-Number");
 
-  maintenancePlusHalfContainer.innerHTML = "El mantenimiento debe ser ";
+  maintenancePlusHalfContainer.innerHTML = "El m+m/2 debe ser ";
   maintenancePlusHalfResult.innerHTML = maintenancePlusHalf.toFixed(2) + "cc";
 
   resultContainer.appendChild(maintenancePlusHalfContainer);
