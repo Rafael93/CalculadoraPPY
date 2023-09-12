@@ -138,17 +138,35 @@ button:active {
     font-size: 24px;
   }
   .container {
-    width: 60%;
+    width: 80%;
+    height: 80%;
   }
+}
+
+.info-button {
+  display: none;
+}
+
+.info-button.active {
+  display: none;
 }
 
 @media (max-width: 950px) {
   .container {
-    width: 70%;
+    width: 90%;
+    height: 70%;
   }
 }
 
-@media (max-width: 450px) {
+.info-button {
+  display: none;
+}
+
+.info-button.active {
+  display: none;
+}
+
+@media (max-width: 500px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -159,11 +177,13 @@ button:active {
 
   .content {
     height: 100%;
+    padding: 0 5rem;
   }
 
   #calculator {
     height: 100%;
     width: 100%;
+    margin: 1rem 0;
   }
 
   h1 {
@@ -197,10 +217,6 @@ button:active {
     font-size: 12px;
   }
 
-  .content {
-    padding: 0 5rem;
-  }
-
   #resultContainer {
     margin: 26px;
   }
@@ -229,7 +245,7 @@ button:active {
     font-weight: bold;
   }
 
-  .info-button-active {
+  .info-button.active {
     display: block;
     position: absolute;
     background-color: white;
