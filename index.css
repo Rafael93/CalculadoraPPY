@@ -21,8 +21,8 @@ input[type="number"] {
 }
 
 .container {
-  width: 50vw;
-  height: 50vh;
+  width: 70%;
+  height: 60vh;
   position: absolute;
   inset: 0;
   margin: auto;
@@ -49,19 +49,19 @@ input[type="number"] {
   padding: 40px;
 }
 
-#calculator h1 {
+.content h1 {
   margin-bottom: 1rem;
 }
 
-#calculator span {
+.content span {
   font-size: small;
 }
 
-#calculator form {
+.content form {
   margin: 1rem;
 }
 
-#calculator form input {
+.content form input {
   width: 70%;
   padding: 12px 15px;
   background-color: #eee;
@@ -69,7 +69,7 @@ input[type="number"] {
   margin-bottom: 1rem;
 }
 
-#calculator form button {
+.content form button {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   padding: 12px 45px;
@@ -118,35 +118,140 @@ button:active {
   margin-bottom: 1rem;
 }
 
+.container.showResult {
+  width: 90vw;
+  height: 70vh;
+}
+
 @media (max-width: 1060px) {
-  h1 {
-    font-size: 24px;
-  }
   .container {
-    width: 60%;
+    width: 70%;
+    height: 60vh;
+  }
+  .content.showResult h1 {
+    font-size: 23px;
+    margin-bottom: 5px;
+  }
+  .content.showResult span {
+    font-size: 12px;
+  }
+  .content form {
+    margin: 8px 0;
+  }
+
+  .content form input {
+    padding: 6px 5px;
+    margin-bottom: 12px;
+  }
+
+  .content form button {
+    padding: 10px 21px;
+    font-size: 10px;
+  }
+
+  .results {
+    margin: 0;
   }
 }
 
 @media (max-width: 950px) {
   .container {
-    width: 70%;
+    width: 80%;
+    height: 60vh;
   }
-}
 
-.info-button {
-  display: none;
-}
+  .content.showResult h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
 
-.info-button.active {
-  display: none;
+  .content.showResult span {
+    font-size: 10px;
+  }
+
+  .info-button {
+    display: none;
+  }
+
+  .info-button.active {
+    display: none;
+  }
+  .content form {
+    margin: 8px 0;
+  }
+
+  .content form input {
+    padding: 6px 10px;
+    margin-bottom: 12px;
+  }
+
+  .content form button {
+    padding: 10px 21px;
+    font-size: 11px;
+  }
+
+  .results {
+    margin: 0;
+  }
 }
 
 @media (max-width: 700px) {
   .container {
     width: 85%;
   }
+
+  .content {
+    padding: 5px 40px;
+  }
+
+  .content form {
+    margin: 5px;
+  }
+  .content form input {
+    padding: 5px 15px;
+  }
+
+  .content form button {
+    padding: 10px 19px;
+    font-size: 10px;
+  }
+
+  .content ul {
+    font-size: 13px;
+  }
+
   .container.showResult {
-    width: 60vh;
+    width: 90vw;
+    height: 60vh;
+  }
+  .content.showResult {
+    padding: 7px;
+  }
+  .content.showResult h1 {
+    font-size: 19px;
+    margin-bottom: 0;
+  }
+  .content.showResult span {
+    font-size: 10px;
+  }
+  .content.showResult form {
+    margin: 6px;
+  }
+  .content.showResult form input {
+    margin-bottom: 6px;
+    padding: 5px 15px;
+  }
+  .content.showResult form button {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  .results {
+    margin: 10px;
+  }
+  .results-Number {
+    margin-bottom: 0;
+    font-size: 18px;
   }
 }
 

@@ -99,6 +99,7 @@ function printResultsBSM(
   maintenancePlusHalf1
 ) {
   container.classList.add("showResult");
+  content.classList.add("showResult");
   createInfoButton();
 
   //creamos dos elementos en el dom para insertar el volumen diario
@@ -134,6 +135,7 @@ function printResultsBSM(
 //Imprime los resultados a obtenidos a traves del metodo H-S
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   container.classList.add("showResult");
+  content.classList.add("showResult");
 
   const dailyVolumenContainer = document.createElement("div");
   dailyVolumenContainer.classList.add("results");
