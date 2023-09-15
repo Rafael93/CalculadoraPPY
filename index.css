@@ -118,43 +118,18 @@ button:active {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1100px) {
-  * {
-    font-size: medium;
-  }
-
-  h1 {
-    font-size: revert;
-  }
-
-  #calculator form button {
-    padding: 11px 19px;
-    font-size: smaller;
-  }
-}
-
 @media (max-width: 1060px) {
   h1 {
     font-size: 24px;
   }
   .container {
-    width: 80%;
-    height: 80%;
+    width: 60%;
   }
-}
-
-.info-button {
-  display: none;
-}
-
-.info-button.active {
-  display: none;
 }
 
 @media (max-width: 950px) {
   .container {
-    width: 90%;
-    height: 70%;
+    width: 70%;
   }
 }
 
@@ -166,68 +141,48 @@ button:active {
   display: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
+  .container {
+    width: 85%;
+  }
+  .container.showResult {
+    width: 60vh;
+  }
+}
+
+@media (max-width: 550px) {
   .container {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
   }
 
-  .content {
-    height: 100%;
-    padding: 0 5rem;
+  .container.showResult {
+    height: 100vh;
+    width: 100vw;
   }
 
   #calculator {
-    height: 100%;
     width: 100%;
-    margin: 1rem 0;
   }
 
-  h1 {
-    font-size: 20px;
-    margin: 10px;
-  }
-
-  #calculator span {
-    font-size: 12px;
-  }
-
-  #calculator form {
-    margin: 8px;
-  }
-
-  #calculator form input {
-    font-size: smaller;
-    padding: 10px 0;
-    margin-bottom: 10px;
-  }
-
-  #calculator form button {
-    font-size: 12px;
+  #calculator h1 {
+    font-size: 24px;
   }
 
   #information {
     width: 100%;
   }
 
-  #information li {
-    font-size: 12px;
-  }
-
-  #resultContainer {
-    margin: 26px;
+  .content {
+    padding: 0 5rem;
   }
 
   .results {
     font-size: 12px;
-    margin: 5px;
-  }
-
-  .results-Number {
-    margin: 0;
+    margin-bottom: 1rem;
   }
 
   .info-button {
@@ -245,7 +200,7 @@ button:active {
     font-weight: bold;
   }
 
-  .info-button.active {
+  .info-button-active {
     display: block;
     position: absolute;
     background-color: white;
@@ -262,5 +217,15 @@ button:active {
 
   .info-button:hover {
     transform: scale(0.7);
+  }
+}
+
+@media (max-width: 280px) {
+  .container.showResult {
+    width: 98vw;
+    height: 100vh;
+  }
+  .content {
+    padding: 0 3rem;
   }
 }

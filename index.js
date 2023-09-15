@@ -98,8 +98,7 @@ function printResultsBSM(
   maintenancePlusHalf1,
   maintenancePlusHalf1
 ) {
-  container.style.display = "block";
-  container.style.height = "100%";
+  container.classList.add("showResult");
   createInfoButton();
 
   //creamos dos elementos en el dom para insertar el volumen diario
@@ -132,11 +131,9 @@ function printResultsBSM(
   resultContainer.appendChild(dailyVolumenResult2);
 }
 
+//Imprime los resultados a obtenidos a traves del metodo H-S
 function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
-  container.style.display = "block";
-  container.style.height = "100%";
-  content.style.height = "100%";
-  createInfoButton();
+  container.classList.add("showResult");
 
   const dailyVolumenContainer = document.createElement("div");
   dailyVolumenContainer.classList.add("results");
@@ -177,17 +174,19 @@ function printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf) {
   resultContainer.appendChild(maintenancePlusHalfResult);
 }
 
+//funcion que se utiliza para borrar los resultados de pantalla cada vez que se vuelva a apretar el boton Calcular
 function hideResult() {
   let results = document.querySelectorAll(".results");
-  let resultsNumbers = document.querySelectorAll(".results-Number");
+  let resultsNumber = document.querySelectorAll(".results-Number");
   if (results.length > 0) {
     for (let i = 0; i < results.length; i++) {
       results[i].remove();
-      resultsNumbers[i].remove();
+      resultsNumber[i].remove();
     }
   }
 }
 
+//funcion que crea un boton para volver a desplegar la seccion de la informacion
 function createInfoButton() {
   if (!document.querySelector(".info-button")) {
     const informationButton = document.createElement("button");
@@ -200,7 +199,7 @@ function createInfoButton() {
         container.style.display = "flex";
         informationButton.innerHTML = "v";
       } else {
-        informationButton.classList.remove("active");
+        informationButton.classList.add("active");
         container.style.display = "block";
         informationButton.innerHTML = "^";
       }
