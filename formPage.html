@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB Formulario</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="formPage.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Formulario de Registro de Paciente</h1>
+        <form id="registerPacient">
+          <label>Nombres:</label>
+          <input type="text" id="first-name" />
+          <label>Apellidos:</label>
+          <input type="text" id="last-name" />
+          <label>ci:</label>
+          <input type="number" id="ci" />
+          <label>edad</label>
+          <input type="number" id="age" />
+          <label>ciudad</label>
+          <input type="text" id="city" />
+          <label>Departamento</label>
+          <select name="departments" id="department-select">
+            <option value="">--ingresar departamento--</option>
+            <option value="Concepcion">Concepci&oacute;n</option>
+            <option value="San Pedro">San Pedro</option>
+            <option value="Cordillera">Cordillera</option>
+            <option value="Guaira">Guair&aacute;</option>
+            <option value="Caazapa">Caazap&aacute;</option>
+            <option value="Itapua">Itap&uacute;a</option>
+            <option value="Misiones">Misiones</option>
+            <option value="Paraguari">Paraguar&iacute;</option>
+            <option value="Alto Parana">Alto Paran&aacute;</option>
+            <option value="Central">Central</option>
+            <option value="Ñeembucú">Ñeembucú</option>
+            <option value="Amambay">Amambay</option>
+            <option value="Canindeyu">Canindey&uacute;</option>
+            <option value="Presidente Hayes">Presidente Hayes</option>
+            <option value="Boqueron">Boquer&oacute;n</option>
+            <option value="Alto Paraguay">Alto Paraguay</option>
+          </select>
+          <label>Dosis administrada</label>
+          <input type="number" id="dosis" />
+          <button id="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

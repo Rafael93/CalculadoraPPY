@@ -10,8 +10,10 @@ const content = document.querySelector(".content");
 //El disparador se ejecutara a hacer click y llama a las funciones
 //que calculan la HB segun el peso del paciente
 
-calculate.addEventListener("click", function (event) {
+calculate.addEventListener("click", function calcular(event) {
   event.preventDefault(); //se previene el comportamiento default
+  controlButtonCalculate();
+  calculate.innerHTML = "Registrar";
   hideResult();
   const weight = weightInput.value;
   let dailyVolume = 0;
@@ -38,6 +40,7 @@ calculate.addEventListener("click", function (event) {
     printResultsHSM(dailyVolume, maintenanceVolume, maintenancePlusHalf);
   } else {
     window.alert("El peso debe ser mayor que 0");
+    calculate.innerHTML = "Calcular";
   }
 });
 
@@ -100,7 +103,6 @@ function printResultsBSM(
 ) {
   container.classList.add("showResult");
   content.classList.add("showResult");
-  createInfoButton();
 
   //creamos dos elementos en el dom para insertar el volumen diario
   const dailyVolumeContainer1 = document.createElement("div");
@@ -194,17 +196,26 @@ function createInfoButton() {
     const informationButton = document.createElement("button");
     informationButton.innerHTML = "^";
     informationButton.classList.add("info-button");
-    container.appendChild(informationButton);
+    //containerResult.appendChild(informationButton);
     informationButton.addEventListener("click", () => {
       if (informationButton.innerHTML === "^") {
         informationButton.classList.add("active");
-        container.style.display = "flex";
+        containerResult.style.display = "flex";
         informationButton.innerHTML = "v";
       } else {
         informationButton.classList.add("active");
-        container.style.display = "block";
+        containerResult.style.display = "block";
         informationButton.innerHTML = "^";
       }
     });
+  }
+}
+
+function controlButtonCalculate() {
+  weightInput.addEventListener("input", () => {
+    calculate.innerHTML = "Calcular";
+  });
+  if (calculate.innerHTML === "Registrar") {
+    window.location.href = "formPage.html";
   }
 }

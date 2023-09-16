@@ -32,6 +32,13 @@ input[type="number"] {
   overflow: hidden;
 }
 
+.container.form {
+  width: 60vw;
+  height: 90vh;
+  background-color: #ff416c;
+  color: white;
+}
+
 #calculator {
   background: white;
   /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
@@ -84,6 +91,57 @@ input[type="number"] {
 
 button:active {
   transform: scale(0.95);
+}
+
+.content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding: 12px 45px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgb(252, 66, 109);
+  border: 1px solid rgb(252, 66, 109);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 20ms ease-in;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: scale(0.95);
+}
+.content.form {
+  display: flex;
+  font-weight: bold;
+}
+
+.content.form h1 {
+  align-self: center;
+}
+
+.content.form form {
+  display: grid;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  padding: 10px 0;
+}
+
+.content.form form input {
+  width: 91%;
+  padding: 7px 12px;
+  margin: 0;
+  text-align: center;
+}
+
+.content.form form label {
+  margin: 10 px;
+}
+
+.content.form form button {
+  margin: 10px;
 }
 
 .results {
@@ -193,6 +251,23 @@ button:active {
   .results {
     margin: 0;
   }
+}
+
+#pacient-list {
+  border: 2px solid rgb(252, 66, 109);
+  color: black;
+  background-color: white;
+}
+
+#pacient-list th {
+  background-color: rgb(252, 66, 109);
+  color: white;
+}
+
+#pacient-list td,
+.my-table th {
+  padding: 10px;
+  text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -329,6 +404,7 @@ button:active {
   .container.showResult {
     width: 98vw;
     height: 100vh;
+    display: block;
   }
   .content {
     padding: 0 3rem;
